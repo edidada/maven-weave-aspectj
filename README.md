@@ -15,3 +15,14 @@ mvn exec:java -Dexec.mainClass="cc.unmi.HelloAop"
 直接运行
 HelloAop
 
+总结：
+一个接口定义
+用在方法上 可以用在类上吗？
+
+一个切面，切点
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+定义处理逻辑
