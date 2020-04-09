@@ -1,5 +1,6 @@
 package cc.unmi.aspects;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -19,6 +20,11 @@ public class MethodStartAspect {
         System.out.println(logStartTime.value());
         startTime.set(System.currentTimeMillis());
         System.out.println("saved method start time in threadLocal");
+    }
+
+    @After("logStartTimePointcut(logStartTime)")
+    public void setInThreadLocal(cc.unmi.LogStartTime logStartTime) {
+        System.out.println("After logStartTimePointcut");
     }
 
     public static Long getStartTime() {
